@@ -1,7 +1,7 @@
 from math import ceil
 import sys
 
-
+# border length of lines and trasfer it on another line
 def handle_text(text: str, border_len: int):
     lines = text.split('\n')
     new_text = []
@@ -17,14 +17,14 @@ def handle_text(text: str, border_len: int):
             new_text.append(new_line)
     return new_text
 
-
+# add first and last lines
 def add_format(lines: list):
     first_line = "/* Condition: \n *\n"
     end_line = "\n **/"
     lines = list(map(lambda line: f" * {line}", lines))
     return first_line + "\n".join(lines) + end_line
 
-
+# text without empty lines
 def input_text():
     text = ""
     for line in sys.stdin:
